@@ -139,7 +139,7 @@ const { data: orgMembers, pending: membersPending } = await useAsyncData(
 );
 
 const { data: orgInfo } = await useAsyncData("orgInfo", () =>
-    $fetch("https://api.github.com/users/GlossMod"),
+    $fetch<any>("https://api.github.com/users/GlossMod"),
 );
 
 const projectsPage = ref(1);
