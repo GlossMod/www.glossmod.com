@@ -13,17 +13,17 @@ const route = useRoute();
 
 const navItems = [
     { name: "首页", path: "/", icon: HomeIcon },
-    { name: "作品", path: "/modslist", icon: PanelTopBottomDashed },
+    { name: "作品", path: "/list", icon: PanelTopBottomDashed },
     { name: "成员", path: "/members", icon: CircleUser },
-    { name: "关于", path: "/about", icon: Info },
     { name: "加入", path: "/join", icon: CirclePlus },
     { name: "悬赏版", path: "/bounty", icon: Table2 },
     { name: "打赏", path: "/donate", icon: Gift },
+    { name: "关于", path: "/about", icon: Info },
 ];
 </script>
 <template>
     <aside
-        class="flex w-16 md:w-64 flex-col backdrop-blur-xl transition-all duration-300">
+        class="flex fixed h-screen w-16 md:w-64 flex-col backdrop-blur-xl transition-all duration-300">
         <div
             class="flex h-14 items-center justify-center md:justify-start md:px-6"
             data-tauri-drag-region>
@@ -61,6 +61,10 @@ const navItems = [
                     v-if="route.path === item.path"
                     class="absolute left-0 top-1/2 h-1/2 w-1 -translate-y-1/2 rounded-r-full bg-primary" />
             </router-link>
+        </div>
+
+        <div class="p-3">
+            <ThemeToggle />
         </div>
     </aside>
 </template>

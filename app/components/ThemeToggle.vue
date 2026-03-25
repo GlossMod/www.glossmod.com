@@ -9,6 +9,8 @@ const isDark = computed(() => colorMode.value === "dark");
 
 function toggleColorMode() {
     colorMode.preference = isDark.value ? "light" : "dark";
+
+    console.log(colorMode.preference);
 }
 </script>
 
@@ -19,16 +21,14 @@ function toggleColorMode() {
             size="icon"
             class="rounded-full border-border/70 bg-background/70"
             :aria-label="isDark ? '切换到亮色模式' : '切换到暗色模式'"
-            @click="toggleColorMode"
-        >
+            @click="toggleColorMode">
             <SunMedium v-if="isDark" class="size-4" />
             <MoonStar v-else class="size-4" />
         </Button>
 
         <template #fallback>
             <div
-                class="size-9 rounded-full border border-border/70 bg-background/70"
-            />
+                class="size-9 rounded-full border border-border/70 bg-background/70" />
         </template>
     </ClientOnly>
 </template>
