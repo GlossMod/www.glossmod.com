@@ -91,6 +91,7 @@ Add these secrets in GitHub: `Settings -> Secrets and variables -> Actions`.
 - `DEPLOY_HOST`: Server IP or domain.
 - `DEPLOY_USER`: SSH login user.
 - `DEPLOY_SSH_KEY`: Private key content used by GitHub Actions.
+- `DEPLOY_PASSWORD`: Optional. Use server password auth if no SSH key is provided.
 - `DEPLOY_PORT`: SSH port (usually `22`).
 - `DEPLOY_PATH`: Absolute deploy path on server, for example `/var/www/glossmod-web`.
 
